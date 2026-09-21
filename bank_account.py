@@ -9,13 +9,11 @@ class Bank:
         self.account_number = account_number
         self.routing_number = routing_number
     # methods
-    def deposit(self):
-        amount = float(input("Enter amount to deposit: "))
+    def deposit(self,amount):
         self.current_balance += amount
         print(f"New balance is ${self.current_balance:.2f}")
 
-    def withdraw(self):
-        amount = float(input("Enter amount to withdraw: "))
+    def withdraw(self,amount):
         # error validation
         if self.current_balance - amount < self.minimum_balance:
             print("Withdraw not completed : Balance is less than minimum balance")
@@ -23,8 +21,8 @@ class Bank:
             self.current_balance -= amount
             print(f"New balance is ${self.current_balance:.2f}")
 
-        def get_routing_number(self):
-            return self.routing_number
+    def get_routing_number(self):
+        return self.routing_number
     
     def print_customer_info(self):
         print(f"Bank: {self.title}")
@@ -34,9 +32,3 @@ class Bank:
         print(f"Minimum balance: {self.minimum_balance:.2f}")
 
 
-
-john = Bank("John Smith", 90.15, 30.00)
-jane = Bank("Jane Smith", 70.15, 10.00)
-
-jane.withdraw()
-john.deposit()

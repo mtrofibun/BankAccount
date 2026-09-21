@@ -5,6 +5,6 @@ class Savings(Bank):
         self.interest_rate = interest_rate
 
     def interest(self):
-        interest_value = self.current_balance * self.interest
+        interest_value = self.current_balance * self.interest_rate
         self.current_balance += interest_value
         print(f"Interest gained : ${interest_value:.2f}\n New balance : ${self.current_balance:.2f}")
